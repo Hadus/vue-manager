@@ -1,10 +1,4 @@
-# 统一用户管理系统
-
-![](https://img.shields.io/badge/license-MIT-0.svg)
-![](https://img.shields.io/badge/download-40M-0.svg)
-![](https://img.shields.io/badge/language-zh-0.svg)
-![](https://img.shields.io/badge/platform-win/mac-0.svg)
-![](https://img.shields.io/badge/node@latest->=8.9.0(推荐使用8.16.0)-0.svg)
+# vue-manager
 
 ## 项目
 
