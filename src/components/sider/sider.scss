@@ -1,0 +1,142 @@
+$logoH: 80px;
+.sider {
+  min-height: calc(100vh - 80px);
+  box-shadow: 1px 0 4px rgba(0, 21, 41, 0.08);
+  &-logo {
+    height: $logoH;
+    background: #022445;
+    color: #fff;
+    line-height: $logoH;
+    text-align: center;
+    font-size: 18px;
+  }
+  .el-menu {
+    border-right: 0;
+  }
+  // 菜单图标
+  .menu-icon {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-right: 10px;
+  }
+
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 339px;
+    height: 100%;
+    overflow-y: auto;
+  }
+  // 深色系配置
+  .menu-dark {
+    .el-submenu__icon-arrow.el-icon-arrow-down {
+      font-size: 18px;
+    }
+    // 修改打开的根目录样式
+    .el-submenu.is-active {
+      .el-submenu__title {
+        background-color: #ffffff !important;
+        color: #0990ec !important;
+        .mti-svg-icon,
+        i {
+          color: #0990ec !important;
+        }
+        position: relative;
+        &::before {
+          transition: 0.3s all linear;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 5px;
+          height: 100%;
+          background-color: #0990ec;
+          content: '';
+          z-index: 10;
+        }
+      }
+      .el-menu-item {
+        background-color: #eaeaea !important;
+      }
+      // 修改子目录样式
+      .el-menu-item.is-active {
+        background-color: #ffffff !important;
+        color: #0990ec !important;
+        .mti-svg-icon {
+          color: #0990ec !important;
+        }
+      }
+      .el-menu-item:hover,
+      .el-submenu__title:hover {
+        background-color: #ffffff !important;
+        color: #1890ff !important;
+        .mti-svg-icon {
+          color: #0990ec !important;
+        }
+      }
+    }
+    // 修改子目录样式
+    .el-menu-item.is-active {
+      background-color: #ffffff !important;
+      color: #0990ec !important;
+      .mti-svg-icon {
+        color: #0990ec !important;
+      }
+    }
+    .el-menu-item:hover,
+    .el-submenu__title:hover {
+      background-color: #ffffff !important;
+      color: #1890ff !important;
+      .mti-svg-icon {
+        color: #0990ec !important;
+      }
+    }
+  }
+  // 浅色系配置
+  .menu-light {
+    .el-menu-item:hover {
+      background-color: transparent !important;
+      color: #1890ff !important;
+    }
+    .el-menu-item.is-active {
+      background-color: #e6f7ff !important;
+      color: #1890ff !important;
+    }
+  }
+  .mti-svg-icon {
+    margin-right: 10px;
+    color: #999999;
+  }
+  .el-menu-item,
+  .el-submenu__title {
+    font-size: 18px !important;
+  }
+
+  .sider-logo span {
+    font-size: 28px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+  }
+  .el-menu-item,
+  .el-submenu__title {
+    height: 60px;
+    line-height: 60px;
+  }
+
+  .collapse-icon {
+    position: absolute;
+    right: 20px;
+    bottom: 24px;
+    width: 24px;
+    .menu-fold {
+      cursor: pointer;
+      fill: #0990ec !important;
+      transition: 0.3s transform linear;
+    }
+  }
+  .mti-svg-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}

@@ -1,0 +1,253 @@
+/*
+ * @Author: liuhuitao 
+ * @Date: 2019-08-08 14:08:38 
+ * @Last Modified by: liuhuitao
+ * @Last Modified time: 2019-10-08 14:13:02
+ * @description: 组件公共样式、图标
+ */
+$imgUrl: '~@/assets/images/common';
+// ------------------- 组件内公共样式 START ------------------
+$topPanelH: 18px;
+// 两栏布局公共样式(参考组织管理)
+.main-container {
+  width: 100%;
+  height: 100%;
+  @include flex(row);
+
+  .left-panel {
+    width: 316px;
+    min-width: 316px;
+    margin-right: 6px;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 0 20px;
+    .l-title-bar {
+      height: 60px;
+      @include sc(18px, #333333);
+      @include flex(row);
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      font-size: $topPanelH;
+      border-bottom: 2px solid #dedede;
+    }
+
+    .tree-panel {
+      width: 100%;
+      height: calc(100% - 76px);
+      padding-top: 20px;
+      box-sizing: border-box;
+    }
+  }
+  .right-panel {
+    flex: 1;
+    height: 100%;
+    background-color: #ffffff;
+    padding: 0 20px;
+    box-sizing: border-box;
+    width: calc(100vw - 700px);
+    .r-title-bar {
+      flex: 1;
+      height: 60px;
+      border-bottom: 2px solid #dedede;
+      @include sc(18px, #333333);
+      @include flex(row);
+      justify-content: space-between;
+      align-items: center;
+      font-size: $topPanelH;
+    }
+    .content-panel {
+      width: 100%;
+      height: calc(100% - 66px);
+      box-sizing: border-box;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+}
+// 一栏布局公共样式(参考组织性质)
+.main-content-panel {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  padding: 0 20px;
+  box-sizing: border-box;
+
+  .top-title-bar {
+    width: 100%;
+    height: 60px;
+    @include sc(18px, #333333);
+    @include flex(row);
+    justify-content: space-between;
+    align-items: center;
+    font-size: $topPanelH;
+    border-bottom: 2px solid #dedede;
+  }
+
+  .content-wrap {
+    width: 100%;
+    height: calc(100% - 62px);
+    overflow-y: auto;
+  }
+}
+// -------------------- 组件内公共样式 END ------------------
+// ----------------- 项目图标已class引入 START ----------------
+// 图标元素
+i.customize-icon {
+  background-size: 100% 100%;
+  display: inline-block;
+  @include wh(28px, 28px);
+  vertical-align: text-top;
+}
+.org-icon {
+  @include wh(24px, 23px);
+  background: url('#{$imgUrl}/share.png') no-repeat;
+}
+.add-icon {
+  @include wh(27px);
+  cursor: pointer;
+  background: url('#{$imgUrl}/add.png') no-repeat;
+}
+
+.list-icon {
+  @include wh(22px);
+  background: url('#{$imgUrl}/list.png') no-repeat;
+}
+.edit-icon {
+  cursor: pointer;
+  background: url('#{$imgUrl}/edit.png') no-repeat;
+}
+.data-edit-icon {
+  cursor: pointer;
+  background: url('#{$imgUrl}/more-edit-black.png') no-repeat;
+}
+// 删除图标
+.delete-icon {
+  width: 25px !important;
+  margin-left: 34px;
+  margin-right: 3px;
+  cursor: pointer;
+  background: url('#{$imgUrl}/delete.png') no-repeat;
+}
+// 表格数据删除
+.data-delete-icon {
+  cursor: pointer;
+  background: url('#{$imgUrl}/delete-black.png') no-repeat;
+}
+// 导入图标
+.import-icon {
+  cursor: pointer;
+  background: url('#{$imgUrl}/import.png') no-repeat;
+}
+// 权限设定图标
+.permission-icon {
+  cursor: pointer;
+  background: url('#{$imgUrl}/set-permission-black.png') no-repeat;
+}
+// 导出图标
+.export-icon {
+  cursor: pointer;
+  background: url('#{$imgUrl}/export.png') no-repeat;
+}
+// 搜索图标
+.search-icon {
+  cursor: pointer;
+  background: url('#{$imgUrl}/search.png') no-repeat;
+}
+// 搜索按钮图标
+.btn-search-icon {
+  cursor: pointer;
+  background: url('#{$imgUrl}/btnsearch.png') no-repeat;
+}
+// 重置密码
+.reset_pass-icon {
+  cursor: pointer;
+  background: url('#{$imgUrl}/reset-pass-black.png') no-repeat;
+}
+// 设备管理图标
+.device-manage-icon {
+  cursor: pointer;
+  background: url('#{$imgUrl}/device-manage-black.png') no-repeat;
+}
+// 解绑手机图标
+.united-mobphone-icon {
+  cursor: pointer;
+  background: url('#{$imgUrl}/united-phone-black.png') no-repeat;
+}
+// 上传图标
+.upload-icon {
+  cursor: pointer;
+  background: url('#{$imgUrl}/upload.png') no-repeat;
+}
+.main-container,
+.main-content-panel {
+  // 修改图标公共样式
+  .data-edit-icon,
+  .data-delete-icon {
+    @include wh(18px, 20px);
+  }
+  .btn-search-icon,
+  .search-icon {
+    @include wh(20px);
+  }
+  .import-icon {
+    @include wh(21px, 17px);
+  }
+  .export-icon {
+    @include wh(20px, 17px);
+  }
+  .permission-icon {
+    @include wh(16px, 18px);
+  }
+}
+
+// 更多操作下拉菜单图标 hover 样式
+.more-operation-setting .el-dropdown-menu__item:hover {
+  .customize-icon {
+    transition: 0.1s background-image linear;
+  }
+  .data-edit-icon {
+    background-image: url('#{$imgUrl}/more-edit.png');
+  }
+  .reset_pass-icon {
+    background-image: url('#{$imgUrl}/reset-pass.png');
+  }
+  .device-manage-icon {
+    background-image: url('#{$imgUrl}/device-manage-blue.png');
+  }
+  .united-mobphone-icon {
+    background-image: url('#{$imgUrl}/united-phone-blue.png');
+  }
+  .data-delete-icon {
+    background-image: url('#{$imgUrl}/more-delete.png');
+  }
+  .permission-icon {
+    background-image: url('#{$imgUrl}/set-permission-blue.png');
+  }
+}
+// 操作设置图标 hover
+.operation-setting-panel {
+  .customize-icon:hover {
+    transition: 0.1s background-image linear;
+  }
+  .data-edit-icon:hover {
+    background-image: url('#{$imgUrl}/more-edit.png');
+  }
+  .reset_pass-icon:hover {
+    background-image: url('#{$imgUrl}/reset-pass.png');
+  }
+  .device-manage-icon:hover {
+    background-image: url('#{$imgUrl}/device-manage-blue.png');
+  }
+  .united-mobphone-icon:hover {
+    background-image: url('#{$imgUrl}/united-phone-blue.png');
+  }
+  .data-delete-icon:hover {
+    background-image: url('#{$imgUrl}/more-delete.png');
+  }
+  .permission-icon:hover {
+    background-image: url('#{$imgUrl}/set-permission-blue.png');
+  }
+}
+
+// ------------------------ 项目图标已class引入 END --------------------------

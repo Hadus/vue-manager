@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.png" />
+    <!-- HTML5 and css3 media queries - old IE enabling scripts -->
+    <!--[if lt IE 11]>
+      <script
+        type="text/javascript"
+        src="/static/cdn/html5shiv/html5.min.js"
+      ></script>
+      <script
+        type="text/javascript"
+        src="/static/cdn/html5shiv/respond.min.js"
+      ></script>
+      <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+    <% if (process.env.NODE_ENV === 'production') { %> <% for(var css of
+    htmlWebpackPlugin.options.cdn.css) { %>
+    <link href="<%=css%>" rel="preload" as="style" />
+    <link rel="stylesheet" href="<%=css%>" as="style" />
+    <% } %> <% for(var js of htmlWebpackPlugin.options.cdn.js) { %>
+    <link href="<%=js%>" rel="preload" as="script" />
+    <script src="<%=js%>"></script>
+    <% } %> <% } %>
+    <title></title>
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but vue-cli3-project doesn't work properly without
+        JavaScript enabled. Please enable it to continue.</strong
+      >
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <!-- 高德地图 -->
+    <script
+      type="text/javascript"
+      src="https://webapi.amap.com/maps?v=1.4.15&key=c83b70e407097e91249a43d61554ba0b&plugin=AMap.Autocomplete,AMap.Scale,AMap.ToolBar"
+    ></script>
+    <!--引入UI组件库（1.0版本） -->
+    <script src="//webapi.amap.com/ui/1.0/main.js"></script>
+    <script src="https://a.amap.com/jsapi_demos/static/demo-center/js/demoutils.js"></script>
+  </body>
+</html>

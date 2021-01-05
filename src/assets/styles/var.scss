@@ -1,0 +1,334 @@
+/*
+ * @Author: liuhuitao 
+ * @Date: 2019-08-20 15:03:49 
+ * @Last Modified by: liuhuitao
+ * @Last Modified time: 2019-10-18 11:31:40
+ * @description: element 样式配置文件(注：可在此修改默认样式)
+ */
+@import './mixin.scss';
+// 被按下时的颜色
+$touchColor: rgba(0, 0, 0, 0.025);
+$border-base-color: #e8e8e8;
+
+:root {
+  --theme-color: #1890ff;
+}
+// .el-input {
+//   height: 42px;
+//   line-height: 42px;
+//   .el-input__inner {
+//     height: 100%;
+//   }
+// }
+// 修改登录表单输入框默认样式
+.mti-login-form {
+  .el-input__inner {
+    background-color: #04659f;
+    height: 44px;
+    line-height: 44px;
+    border: 1px solid rgba(6, 128, 212, 1);
+    @include sc(16px, rgba(255, 255, 255, 1));
+  }
+  .el-form-item.is-success .el-input__inner {
+    border-color: #182f9d !important;
+  }
+  .el-input--prefix .el-input__inner {
+    padding-left: 46px;
+  }
+  .el-input__prefix {
+    left: 18px;
+  }
+}
+
+// 修改表格默认 hover 样式
+.el-table--enable-row-hover .el-table__body tr:hover > td {
+  background-color: #bee4fe !important;
+}
+.el-table {
+  color: #333333;
+  font-size: 16px;
+  .el-table__body-wrapper::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  //滚动条的滑块
+  .el-table__body-wrapper::-webkit-scrollbar-thumb {
+    background-color: #0990ec;
+    border-radius: 10px;
+  }
+  // 修改表头样式
+  .el-table__header-wrapper .has-gutter th {
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
+
+// 修改下拉框高度
+.el-scrollbar.el-cascader-menu {
+  height: 250px;
+}
+// 修改dragTreeTable表格样式
+.drag-tree-table {
+  div.drag-tree-table-header > div.tree-column {
+    color: rgb(51, 51, 51);
+    font-weight: 500;
+    font-size: 18px;
+  }
+  div.drag-tree-table-body > div {
+    font-size: 17px;
+  }
+}
+
+// 地图
+#map_container {
+  .amap-logo {
+    display: none !important;
+  }
+  .amap-copyright {
+    visibility: hidden !important;
+  }
+}
+
+// 修改 MessageBox 弹框样式
+.el-message-box {
+  // width: 400px;
+  height: 216px;
+  // title
+  .el-message-box__title {
+    color: #333333;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .el-message-box__headerbtn .el-message-box__close {
+    color: #666666;
+  }
+  // content
+  .el-message-box__content {
+    height: 70px;
+    padding: 42px 20px 0;
+    color: #333333;
+    font-size: 16px;
+  }
+  .el-message-box__status.el-icon-warning {
+    color: #5ba8e5;
+  }
+  // btn
+  .el-message-box__btns {
+    text-align: center;
+    padding: 0;
+    height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8;
+    .el-button {
+      width: 98px;
+      height: 42px;
+    }
+  }
+  .el-message-box__btns button:nth-child(2) {
+    margin-left: 41px;
+  }
+}
+// 修改账户管理表格样式
+.account-manage-table .el-table__body .el-table__row {
+  td:nth-child(5),
+  td:nth-child(6) {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    .cell {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+// 修改账号新增 折叠面板样式
+.oper-account {
+  width: 98%;
+  .el-tabs {
+    border: 1px solid #ddd;
+  }
+  .el-tabs__item {
+    height: 52px;
+    line-height: 52px;
+  }
+  .el-tabs__header {
+    margin: 0;
+  }
+  .el-tabs__nav {
+    margin-left: 20px;
+  }
+  .el-checkbox {
+    margin: 8px 0 8px 0 !important;
+  }
+  .el-collapse-item__wrap {
+    background-color: #f8f8f8;
+    .el-checkbox {
+      color: #0990ec;
+    }
+  }
+  .el-checkbox__inner {
+    width: 24px;
+    height: 24px;
+    &::after {
+      height: 13px;
+      left: 8px;
+      width: 5px;
+    }
+    &::before {
+      top: 10px !important;
+    }
+  }
+  .el-checkbox__label {
+    font-size: 16px;
+    padding-left: 14px;
+  }
+
+  .tab-role {
+    font-size: 16px;
+  }
+  //折叠面板title
+  .el-collapse-item__header {
+    font-size: 16px;
+    padding-left: 22px;
+  }
+  // 权限设定树
+  .el-tree-node__content {
+    margin: 8px 0;
+    .el-tree-node__label {
+      font-size: 16px;
+      margin-left: 14px;
+    }
+    .el-tree-node__expand-icon {
+      font-size: 16px;
+    }
+  }
+  .el-collapse-item__content {
+    padding-bottom: 0px;
+    margin-top: -8px;
+  }
+  // tabs 内容设定高度
+  .el-tab-pane {
+    max-height: 330px;
+    overflow-y: auto;
+  }
+}
+
+// 人员dataImport
+$imgUrl: '~@/assets/images/common';
+.step-upload {
+  ul.el-upload-list.el-upload-list--text {
+    position: relative;
+    left: -165px;
+    li {
+      margin: 20px 0;
+
+      i.el-icon-document {
+        background-size: 100% 100%;
+        display: inline-block;
+        width: 24px;
+        height: 26px;
+        margin-bottom: -8px;
+        background: url('#{$imgUrl}/excel.png') no-repeat;
+
+        &::before {
+          content: '';
+        }
+      }
+    }
+  }
+}
+
+// 人员管理-添加弹窗--input输入框prepend+append组件
+.dialog-person {
+  .input-with-pend {
+    .el-input {
+      .el-input-group__prepend,
+      .el-input-group__append {
+        padding: 0 15px;
+      }
+      .el-input-group__prepend + .el-input__inner {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+    }
+  }
+}
+
+// 人员管理-详情弹窗
+.dialog-see {
+  .right-box {
+    padding-top: 70px;
+  }
+  .el-input.is-disabled {
+    .el-input__inner {
+      background-color: #fff;
+      border-color: #ddd;
+      color: #606266;
+      cursor: default;
+    }
+  }
+
+  .el-radio__input.is-disabled.is-checked .el-radio__inner {
+    background: #409eff;
+  }
+  .el-checkbox__input.is-disabled.is-checked .el-checkbox__inner {
+    background: #409eff;
+  }
+}
+// 日志模块
+.log {
+  .el-select {
+    width: 170px;
+  }
+  .el-date-editor {
+    width: 260px;
+  }
+}
+
+// 角色分配权限树形选择器
+.assign-permis-tree-panel {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  .el-checkbox__inner {
+    width: 24px;
+    height: 24px;
+    &::after {
+      height: 13px;
+      left: 8px;
+      width: 5px;
+    }
+    &::before {
+      top: 10px !important;
+    }
+  }
+  // 权限设定树
+  .el-tree-node__content {
+    margin: 8px 0;
+    .el-tree-node__label {
+      font-size: 16px;
+      margin-left: 14px;
+    }
+    .el-tree-node__expand-icon {
+      font-size: 16px;
+    }
+  }
+}
+
+// 修改系统通知默认色
+.el-notification {
+  border-color: rgba(6, 128, 212, 1);
+  background-color: rgba(11, 118, 191, 0.6);
+  .el-icon-info {
+    color: #49a79a;
+  }
+  .el-notification__title,
+  .el-notification__content,
+  .el-notification__closeBtn {
+    color: #fff;
+  }
+  .el-notification__closeBtn:hover {
+    color: #fff;
+  }
+}
